@@ -7,14 +7,14 @@ export default function App() {
   const [books, setBooks] = useState([]);
   const [isEditID, setIseditID] = useState(0);
 
-  onsubmt = (e) => {
+  const onsubmt = (e) => {
     e.preventDefault();
     if (isEditID) {
-      const editTitle = books.find((i) => i.id === isEditID);
+      const editID = books.find((i) => i.id === isEditID);
       const updatedBooks = books.map((ExBooks) =>
         ExBooks.id === isEditID
           ? (ExBooks = { id: ExBooks.id, title })
-          : { id: ExBooks.id, title: ExBooks.title }
+          : { id: ExBooks.id, title: ExBooks.title },
       );
 
       setBooks(updatedBooks);
